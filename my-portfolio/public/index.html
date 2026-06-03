@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kate Smith | Portfolio & Media Kit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-canvas: #e6d5c3;
+            --bg-card: #fdfbf7;
+            --text-dark: #2c2c2c;
+            --text-muted: #707070;
+            --accent-brown: #c49a82;
+            --accent-dark-brown: #ab8169;
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Montserrat', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-canvas);
+            font-family: var(--font-sans);
+            color: var(--text-dark);
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Container matching the original two-page template aspect ratio */
+        .portfolio-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        .page {
+            background-color: var(--bg-card);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* --- PAGE 1: LEFT SIDE --- */
+        .hero-banner {
+            position: relative;
+            height: 240px;
+            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1500627869374-13cd993b1115?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+        }
+
+        .profile-arch-container {
+            position: absolute;
+            left: 30px;
+            bottom: -80px;
+            width: 160px;
+            height: 240px;
+            border: 2px solid var(--accent-brown);
+            border-top-left-radius: 100px;
+            border-top-right-radius: 100px;
+            overflow: hidden;
+            background-color: var(--bg-card);
+            padding: 6px;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-top-left-radius: 95px;
+            border-top-right-radius: 95px;
+        }
+
+        .p1-content {
+            padding: 110px 40px 40px 40px;
+            flex-grow: 1;
+        }
+
+        .header-title h1 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .header-title p {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-brown);
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        .about-section {
+            margin-top: 40px;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            color: var(--accent-brown);
+            margin-bottom: 8px;
+            font-weight: 400;
+        }
+
+        .divider {
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 15px;
+        }
+
+        .about-section p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .contact-info {
+            margin-top: 40px;
+            font-size: 0.8rem;
+        }
+
+        .contact-row {
+            display: flex;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .contact-label {
+            width: 80px;
+            color: var(--accent-brown);
+            font-weight: 500;
+        }
+
+        .contact-value {
+            color: var(--text-dark);
+        }
+
+        .stats-panel {
+            background-color: var(--accent-brown);
+            color: white;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 20px;
+        }
+
+        .stats-left {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .stat-box {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+        }
+
+        .stat-label {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+            margin-top: 4px;
+            line-height: 1.2;
+        }
+
+        .stats-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 12px;
+            border-left: 1px solid rgba(255,255,255,0.3);
+            padding-left: 25px;
+        }
+
+        .bar-group {
+            font-size: 0.65rem;
+        }
+
+        .bar-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .bar-bg {
+            background-color: rgba(255,255,255,0.3);
+            height: 4px;
+            width: 100%;
+            border-radius: 2px;
+        }
+
+        .bar-fill {
+            background-color: white;
+            height: 100%;
+            border-radius: 2px;
+        }
+
+        /* --- PAGE 2: RIGHT SIDE --- */
+        .p2-top-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            flex-grow: 1;
+        }
+
+        .channel-topics {
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .topic-arch-item {
+            text-align: center;
+            width: 100%;
+            max-width: 110px;
+        }
+
+        .topic-arch {
+            width: 100%;
+            height: 130px;
+            border-top-left-radius: 60px;
+            border-top-right-radius: 60px;
+            overflow: hidden;
+            margin-bottom: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .topic-arch img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .topic-arch-item span {
+            font-family: var(--font-serif);
+            font-size: 0.85rem;
+            font-style: italic;
+            color: var(--text-muted);
+        }
+
+        .services-panel {
+            background-color: var(--accent-brown);
+            color: white;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .services-panel .section-title {
+            color: white;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding-bottom: 5px;
+        }
+
+        .service-item {
+            font-size: 0.75rem;
+        }
+
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 500;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .service-item p {
+            opacity: 0.8;
+            line-height: 1.5;
+            text-align: justify;
+        }
+
+        .p2-bottom-layout {
+            padding: 30px 40px;
+            background-color: var(--bg-card);
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .partnerships-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+            margin-bottom: 30px;
+        }
+
+        .partner-logo-placeholder {
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            background-color: white;
+        }
+
+        .expect-section {
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 25px;
+        }
+
+        .expect-section .section-title {
+            margin-bottom: 12px;
+        }
+
+        .expect-section p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        /* Responsive scaling for smaller screens and tablets */
+        @media (max-width: 900px) {
+            .portfolio-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-panel {
+                grid-template-columns: 1fr;
+            }
+            .stats-right {
+                border-left: none;
+                padding-left: 0;
+                padding-top: 15px;
+                border-top: 1px solid rgba(255,255,255,0.3);
+            }
+            .partnerships-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="portfolio-container">
+        
+        <div class="page">
+            <div class="hero-banner">
+                <div class="profile-arch-container">
+                    <img class="profile-img" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80" alt="Kate Smith Portrait">
+                </div>
+            </div>
+
+            <div class="p1-content">
+                <div class="header-title">
+                    <h1>Kate Smith</h1>
+                    <p>Digital Content Creator</p>
+                </div>
+
+                <div class="about-section">
+                    <h2 class="section-title">About</h2>
+                    <div class="divider"></div>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim.</p>
+                </div>
+
+                <div class="contact-info">
+                    <div class="contact-row">
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">katesmith@email.com</span>
+                    </div>
+                    <div class="contact-row">
+                        <span class="contact-label">Phone</span>
+                        <span class="contact-value">(555) 123 - 456 - 789</span>
+                    </div>
+                    <div class="contact-row">
+                        <span class="contact-label">Web</span>
+                        <span class="contact-value">katesmith.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-panel">
+                <div class="stats-left">
+                    <div class="stat-box">
+                        <div class="stat-number">10k</div>
+                        <div class="stat-label">Instagram<br>Followers</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">22k</div>
+                        <div class="stat-label">TikTok<br>Followers</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">15%</div>
+                        <div class="stat-label">Engagement<br>Rate</div>
+                    </div>
+                </div>
+                
+                <div class="stats-right">
+                    <div class="bar-group">
+                        <div class="bar-labels">
+                            <span>90% Age reach 22 - 35</span>
+                        </div>
+                        <div class="bar-bg"><div class="bar-fill" style="width: 90%;"></div></div>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar-labels">
+                            <span>80% Female</span>
+                        </div>
+                        <div class="bar-bg"><div class="bar-fill" style="width: 80%;"></div></div>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar-labels">
+                            <span>75% Us - Italy</span>
+                        </div>
+                        <div class="bar-bg"><div class="bar-fill" style="width: 75%;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page">
+            <div class="p2-top-layout">
+                <div class="channel-topics">
+                    <h2 class="section-title" style="font-size: 1.1rem; letter-spacing: 1px;">Channel Topics</h2>
+                    
+                    <div class="topic-arch-item">
+                        <div class="topic-arch">
+                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=300&q=80" alt="Topic 1">
+                        </div>
+                        <span>Lorem Ipsum</span>
+                    </div>
+
+                    <div class="topic-arch-item">
+                        <div class="topic-arch">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=300&q=80" alt="Topic 2">
+                        </div>
+                        <span>Lorem Ipsum</span>
+                    </div>
+
+                    <div class="topic-arch-item">
+                        <div class="topic-arch">
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80" alt="Topic 3">
+                        </div>
+                        <span>Lorem Ipsum</span>
+                    </div>
+                </div>
+
+                <div class="services-panel">
+                    <h2 class="section-title">Services</h2>
+                    
+                    <div class="service-item">
+                        <div class="service-header">
+                            <span>Temporary Shoutout</span>
+                            <span>$500</span>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-header">
+                            <span>Product Placements</span>
+                            <span>$500</span>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-header">
+                            <span>Branded Content Creation</span>
+                            <span>$500</span>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-header">
+                            <span>Ongoing Partnership</span>
+                            <span>$500</span>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p2-bottom-layout">
+                <h2 class="section-title" style="font-size: 1.1rem;">Previous Partnerships</h2>
+                <div class="divider"></div>
+                
+                <div class="partnerships-grid">
+                    <div class="partner-logo-placeholder">Lorem Ipsum</div>
+                    <div class="partner-logo-placeholder">Dolo Sit</div>
+                    <div class="partner-logo-placeholder">Amet</div>
+                    <div class="partner-logo-placeholder">Amet</div>
+                    <div class="partner-logo-placeholder">Lorem Ipsum</div>
+                    <div class="partner-logo-placeholder">Dolo Sit</div>
+                    <div class="partner-logo-placeholder">Dolo Sit</div>
+                    <div class="partner-logo-placeholder">Amet</div>
+                    <div class="partner-logo-placeholder">Lorem Ipsum</div>
+                </div>
+
+                <div class="expect-section">
+                    <h2 class="section-title" style="font-size: 1.1rem;">What To Expect</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

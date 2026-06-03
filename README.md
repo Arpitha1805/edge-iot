@@ -1,1 +1,6 @@
-# edge-iot
+#### 01/06/2026
+
+Learned to use git
+
+
+
